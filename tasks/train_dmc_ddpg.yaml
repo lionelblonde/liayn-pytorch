@@ -1,0 +1,64 @@
+meta:
+  task: 'train'
+  benchmark: 'dmc'
+  algo: 'ddpg-td3'
+
+resources:
+  cuda: false
+
+logging:
+  wandb_project: 'espeon'
+  record: false
+
+# Training
+num_timesteps: 1e8
+training_steps_per_iter: 2
+eval_steps_per_iter: 10
+eval_frequency: 10000
+
+# Model
+layer_norm: true
+
+# Optimization
+actor_lr: 1.0e-4
+critic_lr: 1.0e-4
+lr_schedule: 'linear'
+clip_norm: 1.
+wd_scale: 0.
+
+# Algorithm
+rollout_len: 2
+batch_size: 64
+gamma: 0.99
+mem_size: 1000000
+noise_type: '"ou_0.3"'
+
+pn_adapt_frequency: 50
+polyak: 0.001
+targ_up_freq: 100
+n_step_returns: false
+lookahead: 10
+ret_norm: false
+popart: false
+
+# TD3
+clipped_double: false
+targ_actor_smoothing: false
+td3_std: 0.2
+td3_c: 0.5
+actor_update_delay: 1
+
+# Prioritized replay
+prioritized_replay: false
+alpha: 0.3
+beta: 1.
+ranked: false
+unreal: false
+
+# Distributional RL
+use_c51: true
+use_qr: false
+c51_num_atoms: 51
+c51_vmin: -100.
+c51_vmax: 100.
+num_tau: 200

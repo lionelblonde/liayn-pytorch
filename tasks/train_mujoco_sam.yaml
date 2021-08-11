@@ -1,0 +1,93 @@
+meta:
+  task: 'train'
+  benchmark: 'mujoco'
+  algo: 'sam-dac'
+
+resources:
+  cuda: false
+
+logging:
+  wandb_project: 'vaporeon'
+  record: false
+
+# Training
+num_timesteps: 1e7
+training_steps_per_iter: 2
+eval_steps_per_iter: 10
+eval_frequency: 10000
+
+# Model
+layer_norm: true
+
+# Optimization
+actor_lr: 2.5e-4
+critic_lr: 2.5e-4
+lr_schedule: 'linear'
+clip_norm: 40.0
+wd_scale: 0.
+
+# Algorithm
+rollout_len: 2
+batch_size: 64
+gamma: 0.99
+mem_size: 100000
+noise_type: '"adaptive-param_0.2, ou_0.2"'
+pn_adapt_frequency: 50
+polyak: 0.005
+targ_up_freq: 100
+n_step_returns: true
+lookahead: 10
+ret_norm: false
+popart: false
+
+# TD3
+clipped_double: true
+targ_actor_smoothing: true
+td3_std: 0.2
+td3_c: 0.5
+actor_update_delay: 2
+
+# Prioritized replay
+prioritized_replay: false
+alpha: 0.3
+beta: 1.
+ranked: false
+unreal: false
+
+# Distributional RL
+use_c51: false
+use_qr: false
+c51_num_atoms: 51
+c51_vmin: -100.
+c51_vmax: 100.
+num_tau: 200
+
+# Adversarial imitation
+g_steps: 1
+d_steps: 1
+d_lr: 5.0e-4
+state_only: false
+minimax_only: true
+ent_reg_scale: 0.001
+spectral_norm: true
+grad_pen: true
+grad_pen_type: 'wgan'
+grad_pen_targ: 1.
+grad_pen_scale: 10.
+one_sided_pen: true
+historical_patching: true
+fake_ls_type: '"none"'
+real_ls_type: '"random-uniform_0.7_1.2"'
+wrap_absorb: true
+d_batch_norm: false
+
+reward_type: 'gail'
+monitor_mods: false
+
+red_epochs: 200
+red_batch_norm: true
+red_lr: 5.0e-4
+proportion_of_exp_per_red_update: 1.
+
+use_purl: false
+purl_eta: 0.25
