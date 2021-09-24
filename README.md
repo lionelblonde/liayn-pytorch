@@ -20,7 +20,7 @@ The algorithms are implemented in PyTorch, and set to be trained and evaluated i
 benchmark of continuous control environments
 provided though [OpenAI's Gym](https://gym.openai.com)
 (installation instructions below).
-The expert demonstrations used in [our paper]](https://arxiv.org/abs/2006.16785)
+The expert demonstrations used in [our paper](https://arxiv.org/abs/2006.16785)
 to train the imitation learning agents are made available at
 [this link](https://drive.google.com/drive/folders/1dGw-O6ZT_WWTuqDayIA9xat1jZgeiXoE?usp=sharing)
 (installation instructions below).
