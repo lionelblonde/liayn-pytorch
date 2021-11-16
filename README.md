@@ -18,7 +18,7 @@ as well as their off-policy adversarial imitation learning counterparts,
 The algorithms are implemented in PyTorch, and set to be trained and evaluated in the
 [MuJoCo](http://www.mujoco.org)
 benchmark of continuous control environments
-provided though [OpenAI's Gym](https://gym.openai.com)
+provided through [OpenAI's Gym](https://gym.openai.com)
 (installation instructions below).
 The expert demonstrations used in [our paper](https://arxiv.org/abs/2006.16785)
 to train the imitation learning agents are made available at
