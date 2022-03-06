@@ -3,6 +3,7 @@
 PyTorch implementation of our work:
 "Lipschitzness Is All You Need To Tame Off-policy Generative Adversarial Imitation Learning".
 
+Accepted for publication in the Machine Learning journal 2022 |
 [arXiv link](https://arxiv.org/abs/2006.16785) |
 [Expert demonstrations](https://drive.google.com/drive/folders/1dGw-O6ZT_WWTuqDayIA9xat1jZgeiXoE?usp=sharing)
 
